@@ -1,0 +1,12 @@
+#!/bin/bash
+
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+
+if [[ "$BRANCH" == "master" ]]; then
+  echo
+  echo "Prevented push to $BRANCH. This is a very dangerous command."
+  echo
+  exit 1
+fi
+
+exit 0
